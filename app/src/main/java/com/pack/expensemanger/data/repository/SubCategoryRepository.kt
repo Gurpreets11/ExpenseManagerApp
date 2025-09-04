@@ -12,6 +12,10 @@ class SubCategoryRepository(private val subCategoryDao: SubCategoryDao) {
         return subCategoryDao.getSubCategoriesByCategory(categoryId)
     }
 
+    fun getAllSubCategories(): LiveData<List<SubCategoryEntity>> {
+        return subCategoryDao.getAllSubCategories()
+    }
+
     suspend fun insert(subCategory: SubCategoryEntity) {
         subCategoryDao.insertSubCategory(subCategory)
     }

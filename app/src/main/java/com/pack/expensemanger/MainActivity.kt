@@ -10,6 +10,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.pack.expensemanger.ui.activity.CategoryActivity
 import com.pack.expensemanger.ui.activity.ExpenseActivity
 import com.pack.expensemanger.ui.activity.IncomeActivity
+import com.pack.expensemanger.ui.activity.SubCategoryActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,6 +26,7 @@ class MainActivity : AppCompatActivity() {
         val btnIncome = findViewById<Button>(R.id.btnIncome)
         val btnExpense = findViewById<Button>(R.id.btnExpense)
         val btnCategory = findViewById<Button>(R.id.btnCategory)
+        val btnSubCategory = findViewById<Button>(R.id.btnSubCategory)
 
         btnIncome.setOnClickListener {
             startActivity(Intent(this, IncomeActivity::class.java))
@@ -36,6 +38,10 @@ class MainActivity : AppCompatActivity() {
 
         btnCategory.setOnClickListener {
             startActivity(Intent(this, CategoryActivity::class.java))
+        }
+
+        btnSubCategory.setOnClickListener {
+            startActivity(Intent(this, SubCategoryActivity::class.java))
         }
     }
 }

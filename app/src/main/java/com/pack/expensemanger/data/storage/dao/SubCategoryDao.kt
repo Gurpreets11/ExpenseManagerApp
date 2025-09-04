@@ -16,6 +16,9 @@ interface SubCategoryDao {
     @Delete
     suspend fun deleteSubCategory(subCategory: SubCategoryEntity)
 
+    @Query("SELECT * FROM subcategories ORDER BY name ASC")
+    fun getAllSubCategories(): LiveData<List<SubCategoryEntity>>
+
     @Query("SELECT * FROM subcategories WHERE categoryId = :categoryId ORDER BY name ASC")
     fun getSubCategoriesByCategory(categoryId: Int): LiveData<List<SubCategoryEntity>>
 }

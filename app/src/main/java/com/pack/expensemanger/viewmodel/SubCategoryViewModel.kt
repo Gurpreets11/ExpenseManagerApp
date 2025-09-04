@@ -26,6 +26,10 @@ class SubCategoryViewModel(private val repository: SubCategoryRepository) : View
         return repository.getSubCategoriesByCategory(categoryId)
     }
 
+    fun getAllSubCategories( ): LiveData<List<SubCategoryEntity>> {
+        return repository.getAllSubCategories()
+    }
+
     fun insert(subCategory: SubCategoryEntity) = viewModelScope.launch {
         repository.insert(subCategory)
     }
