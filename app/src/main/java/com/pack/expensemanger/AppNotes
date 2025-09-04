@@ -1,0 +1,20 @@
+val db = AppDatabase.getDatabase(this)
+
+// Create repositories
+val expenseRepo = ExpenseRepository(db.expenseDao())
+val incomeRepo = IncomeRepository(db.incomeDao())
+val categoryRepo = CategoryRepository(db.categoryDao())
+val subCategoryRepo = SubCategoryRepository(db.subCategoryDao())
+
+// Create factory
+val factory = AppViewModelFactory(expenseRepo, incomeRepo, categoryRepo, subCategoryRepo)
+
+// Get any ViewModel
+val expenseViewModel = ViewModelProvider(this, factory)[ExpenseViewModel::class.java]
+val incomeViewModel = ViewModelProvider(this, factory)[IncomeViewModel::class.java]
+val categoryViewModel = ViewModelProvider(this, factory)[CategoryViewModel::class.java]
+val subCategoryViewModel = ViewModelProvider(this, factory)[SubCategoryViewModel::class.java]
+
+
+
+

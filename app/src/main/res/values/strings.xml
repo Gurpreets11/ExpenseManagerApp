@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ExpenseMangerKtApp</string>
+    <string name="add_income">Add</string>
+</resources>
