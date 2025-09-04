@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.pack.expensemanger.ui.activity.CategoryActivity
 import com.pack.expensemanger.ui.activity.ExpenseActivity
 import com.pack.expensemanger.ui.activity.IncomeActivity
 
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnCategory.setOnClickListener {
-            //startActivity(Intent(this, CategoryActivity::class.java))
+            startActivity(Intent(this, CategoryActivity::class.java))
         }
     }
 }
