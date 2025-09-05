@@ -32,7 +32,7 @@ class SubCategoryAdapter :
 
         fun bind(subCategory: SubCategoryEntity) {
             tvSubCategoryName.text = subCategory.name
-            tvParentCategoryName.text = "Category ID: ${subCategory.categoryId}"
+            tvParentCategoryName.text = "Category Name: ${subCategory.categoryId}"
         }
     }
 
