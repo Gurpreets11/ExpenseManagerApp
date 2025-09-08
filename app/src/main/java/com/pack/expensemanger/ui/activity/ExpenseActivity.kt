@@ -1,5 +1,6 @@
 package com.pack.expensemanger.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -53,10 +54,12 @@ class ExpenseActivity : AppCompatActivity() {
         fabAdd.setOnClickListener {
             //showAddIncomeDialog()
 
-            val dialog = AddExpenseDialog { expense ->
+           /* val dialog = AddExpenseDialog { expense ->
                 expenseViewModel.insert(expense)
             }
-            dialog.show(supportFragmentManager, "AddExpenseDialog")
+            dialog.show(supportFragmentManager, "AddExpenseDialog")*/
+
+            startActivity(Intent(this, AddExpenseActivity::class.java))
         }
 
     }

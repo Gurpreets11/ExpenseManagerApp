@@ -24,8 +24,8 @@ class AddExpenseDialog(private val onExpenseAdded: (ExpenseMasterEntity) -> Unit
                 val amount = etAmount.text.toString().toDoubleOrNull() ?: 0.0
                 val description = etDescription.text.toString()
                 if (amount > 0) {
-                    val expense = ExpenseMasterEntity(id = 0, title = description, amount = amount, category = "EXPENSES", date = 0, notes = "")
-                    onExpenseAdded(expense)
+                    //val expense = ExpenseMasterEntity(id = 0, title = description, amount = amount, category = "EXPENSES", date = 0, notes = "")
+                    //onExpenseAdded(expense)
                 }
             }
             .setNegativeButton("Cancel", null)

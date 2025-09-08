@@ -6,13 +6,17 @@ import androidx.lifecycle.ViewModelProvider
 import com.pack.expensemanger.data.repository.CategoryRepository
 import com.pack.expensemanger.data.repository.ExpenseRepository
 import com.pack.expensemanger.data.repository.IncomeRepository
+import com.pack.expensemanger.data.repository.PaymentMethodRepository
+import com.pack.expensemanger.data.repository.PaymentStatusRepository
 import com.pack.expensemanger.data.repository.SubCategoryRepository
 
 class AppViewModelFactory(
     private val expenseRepository: ExpenseRepository,
     private val incomeRepository: IncomeRepository,
     private val categoryRepository: CategoryRepository,
-    private val subCategoryRepository: SubCategoryRepository
+    private val subCategoryRepository: SubCategoryRepository,
+    private val paymentMethodRepository:  PaymentMethodRepository,
+    private val paymentStatusRepository: PaymentStatusRepository
 ) : ViewModelProvider.Factory {
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
@@ -28,6 +32,12 @@ class AppViewModelFactory(
             }
             modelClass.isAssignableFrom(SubCategoryViewModel::class.java) -> {
                 SubCategoryViewModel(subCategoryRepository) as T
+            }
+            modelClass.isAssignableFrom(PaymentMethodViewModel::class.java) -> {
+                PaymentMethodViewModel(paymentMethodRepository) as T
+            }
+            modelClass.isAssignableFrom(PaymentStatusViewModel::class.java) -> {
+                PaymentStatusViewModel(paymentStatusRepository) as T
             }
             else -> throw IllegalArgumentException("Unknown ViewModel class: ${modelClass.name}")
         }

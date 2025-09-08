@@ -18,6 +18,8 @@ class ExpensesManagerApp : Application() {
     val incomeRepository by lazy { IncomeRepository(database.incomeDao()) }
     val categoryRepository by lazy { CategoryRepository(database.categoryDao()) }
     val subCategoryRepository by lazy { SubCategoryRepository(database.subCategoryDao()) }
+    val paymentMethodRepository by lazy { PaymentMethodRepository(database.paymentMethodDao()) }
+    val paymentStatusRepository by lazy { PaymentStatusRepository(database.paymentStatusDao()) }
 
     // Single ViewModelFactory
     val appViewModelFactory by lazy {
@@ -25,7 +27,9 @@ class ExpensesManagerApp : Application() {
             expenseRepository,
             incomeRepository,
             categoryRepository,
-            subCategoryRepository
+            subCategoryRepository,
+            paymentMethodRepository,
+            paymentStatusRepository
         )
     }
 }

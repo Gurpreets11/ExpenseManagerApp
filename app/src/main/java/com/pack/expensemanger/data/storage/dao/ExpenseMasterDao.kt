@@ -21,7 +21,7 @@ interface ExpenseMasterDao {
     @Delete
     suspend fun deleteExpense(expense: ExpenseMasterEntity)
 
-    @Query("SELECT * FROM expenses_master ORDER BY date DESC")
+    @Query("SELECT * FROM expenses_master ORDER BY expenseDateTime DESC")
     fun getAllExpenses(): LiveData<List<ExpenseMasterEntity>>
 
 }

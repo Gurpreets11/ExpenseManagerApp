@@ -9,7 +9,12 @@ class ExpenseMasterEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val title: String,
     val amount: Double,
+    val expenseDateTime: Long,   // store timestamp
+    val paymentMethod : Int,
+    val categoryId: Int,
     val category: String,
-    val date: Long,   // store timestamp
+    val subCategoryId: Int,
+    val subCategory: String,
+    val paymentStatus : Int,
     val notes: String? = null
 )
